@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h> // !Necessária para raiz (sqrt) e quadrado (pow)!
-#include "Bhaskara.h"
+#include "Bhaskara.c"
 
 int main() {
     int opcao;
