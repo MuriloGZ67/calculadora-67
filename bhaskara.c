@@ -19,8 +19,8 @@ void executarBhaskara() {
     printf("Digite o valor de c: ");
     scanf("%lf", &c);
     
-            // Delta
-    
+    // Delta
+
     delta = pow(b, 2) - (4 * a * c);
     printf("\nDelta calculado: %.2lf\n", delta);
     
@@ -37,8 +37,8 @@ void executarBhaskara() {
         printf("X2 = %.2lf\n", x2);
     }
 
-            // X e Y do vértice
-    
+    // X e Y do vértice
+
     printf("\nDeseja calcular o vertice da parabola (Xv e Yv)?\n");
     printf("1 - Sim\n");
     printf("2 - Nao\n");
@@ -53,4 +53,3 @@ void executarBhaskara() {
         printf("\nCalculo encerrado sem o vertice.\n");
     }
 }
-
