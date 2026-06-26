@@ -24,7 +24,6 @@ void executarInequacao() {
     printf("Escolha a opcao: ");
     scanf(" %d", &sinal);
 
-    // Isola o X corretamente: ax > -b -> x = -b / a
     resultado = -b / a;
 
     printf("\n--- CONJUNTO SOLUCAO ---\n");
