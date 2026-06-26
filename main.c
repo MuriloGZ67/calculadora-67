@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <math.h> // !Necessária para raiz (sqrt) e quadrado (pow)!
-#include "Bhaskara.c"
+#include <math.h> 
+
+// PROTÓTIPO: Avisa ao compilador que essa função existe no outro arquivo .c
+void executarBhaskara(); 
 
 int main() {
     int opcao;
@@ -17,12 +19,10 @@ int main() {
     printf("Escolha a operacao desejada: ");
     scanf("%d", &opcao);
 
-
     switch(opcao) {
 
-			// Soma
-
         case 1: 
+
             printf("\n[Soma] Digite o primeiro numero: ");
             scanf("%lf", &num1);
             printf("[Soma] Digite o segundo numero: ");
@@ -31,9 +31,8 @@ int main() {
             printf(">>> Resultado da soma: %.2lf\n", resultado);
             break;
 
-			// Subtração
-
         case 2: 
+
             printf("\n[Subtracao] Digite o primeiro numero: ");
             scanf("%lf", &num1);
             printf("[Subtracao] Digite o segundo numero: ");
@@ -41,8 +40,6 @@ int main() {
             resultado = num1 - num2;
             printf(">>> Resultado da subtracao: %.2lf\n", resultado);
             break;
-
-			// Multiplicação
 
         case 3: 
             printf("\n[Multiplicacao] Digite o primeiro numero: ");
@@ -53,15 +50,13 @@ int main() {
             printf(">>> Resultado da multiplicacao: %.2lf\n", resultado);
             break;
 
- 			// Divisão
-
         case 4:
+
             printf("\n[Divisao] Digite o dividendo (numero de cima): ");
             scanf("%lf", &num1);
             printf("[Divisao] Digite o divisor (numero de baixo): ");
             scanf("%lf", &num2);
             
-            // Seguranca contra divisao por zero
             if (num2 == 0) {
                 printf(">>> Erro: Nao eh possivel dividir por zero!\n");
             } else {
@@ -70,13 +65,11 @@ int main() {
             }
             break;
 
-			// Raiz Quadrada
-
         case 5:
+
             printf("\n[Raiz] Digite o numero para extrair a raiz: ");
             scanf("%lf", &num1);
             
-            // Seguranca contra numeros negativos
             if (num1 < 0) {
                 printf(">>> Erro: Nao existe raiz quadrada de numero negativo nos reais.\n");
             } else {
@@ -85,24 +78,20 @@ int main() {
             }
             break;
 
-			// Ao Quadrado
-
         case 6:
+
             printf("\n[Quadrado] Digite o numero que deseja elevar: ");
             scanf("%lf", &num1);
             resultado = pow(num1, 2);
             printf(">>> %.2lf elevado ao quadrado eh %.2lf\n", num1, resultado);
             break;
 
-			//Bháskara
+        case 7:
 
-	case 7:
-   	    executarBhaskara();
-            break;
-
-			// Números Inválidos
+            executarBhaskara();
 
         default:
+
             printf("\n>>> Opcao invalida! Reinicie o programa.\n");
             break;
     }
