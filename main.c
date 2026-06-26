@@ -1,9 +1,58 @@
 #include <stdio.h>
 #include <math.h>
 
+// --- FUNÇÃO DA INEQUAÇÃO ---
+
+void executarInequacao() {
+    double a, b, resultado;
+    int sinal;
+
+    printf("\n--- INEQUACAO DO 1o GRAU (ax + b [sinal] 0) ---\n");
+    printf("Digite o valor de A: ");
+    scanf("%lf", &a);
+    printf("Digite o valor de B: ");
+    scanf("%lf", &b);
+
+    if (a == 0) {
+        printf("O valor de A nao pode ser zero em uma inequacao do 1o grau.\n");
+        return;
+    }
+
+    printf("\nEscolha o sinal da inequacao:\n");
+    printf("1 - Maior que (>)\n");
+    printf("2 - Menor que (<)\n");
+    printf("Escolha a opcao: ");
+    scanf("%d", &sinal);
+
+    resultado = -b / a;
+
+    printf("\n--- CONJUNTO SOLUCAO ---\n");
+
+    if (a > 0) {
+        if (sinal == 1) {
+            printf("Solucao: X > %.2lf\n", resultado);
+        } else if (sinal == 2) {
+            printf("Solucao: X < %.2lf\n", resultado);
+        } else {
+            printf("Opcao de sinal invalida.\n");
+        }
+    } 
+
+    else {
+        printf("Nota: Como 'A' e negativo, o sinal da inequacao inverteu.\n");
+        if (sinal == 1) {
+            printf("Solucao: X < %.2lf\n", resultado);
+        } else if (sinal == 2) {
+            printf("Solucao: X > %.2lf\n", resultado);
+        } else {
+            printf("Opcao de sinal invalida.\n");
+        }
+    }
+}
+
 // --- FUNÇÃO DO BHASKARA ---
 
-void executarBhaskara() {
+void ejecutarBhaskara() {
     double a, b, c;
     double delta, x1, x2, xv, yv;
 
@@ -44,7 +93,7 @@ void executarBhaskara() {
     printf("Yv (Vertice Y): %.2lf\n", yv);
 }
 
-// --- Código ---
+// --- MENU ---
 
 int main() {
     int opcao;
@@ -58,6 +107,7 @@ int main() {
     printf("5 - Raiz Quadrada\n");
     printf("6 - Potenciacao\n"); 
     printf("7 - Bhaskara\n");
+    printf("8 - Inequacao do 1o Grau\n");
     printf("Escolha a operacao desejada: ");
     scanf("%d", &opcao);
 
@@ -122,6 +172,11 @@ int main() {
         case 7:
 
             executarBhaskara();
+            break;
+
+        case 8:
+
+            executarInequacao();
             break;
 
         default:
