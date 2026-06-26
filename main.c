@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-// --- FUNÇÃO DA INEQUAÇÃO ---
+// --- FINEQUAÇÃO ---
 
 void executarInequacao() {
     double a, b, resultado;
@@ -9,60 +9,58 @@ void executarInequacao() {
 
     printf("\n--- INEQUACAO DO 1o GRAU (ax + b [sinal] 0) ---\n");
     printf("Digite o valor de A: ");
-    scanf("%lf", &a);
+    scanf(" %lf", &a);
     printf("Digite o valor de B: ");
-    scanf("%lf", &b);
+    scanf(" %lf", &b);
 
     if (a == 0) {
         printf("O valor de A nao pode ser zero em uma inequacao do 1o grau.\n");
         return;
     }
 
-    printf("\nEscolha o sinal da inequacao:\n");
+    printf("\nEscolha o sinal original da inequacao:\n");
     printf("1 - Maior que (>)\n");
     printf("2 - Menor que (<)\n");
     printf("Escolha a opcao: ");
-    scanf("%d", &sinal);
+    scanf(" %d", &sinal);
 
+    // Isola o X corretamente: ax > -b -> x = -b / a
     resultado = -b / a;
 
     printf("\n--- CONJUNTO SOLUCAO ---\n");
 
-    if (a > 0) {
-        if (sinal == 1) {
-            printf("Solucao: X > %.2lf\n", resultado);
-        } else if (sinal == 2) {
-            printf("Solucao: X < %.2lf\n", resultado);
-        } else {
-            printf("Opcao de sinal invalida.\n");
-        }
-    } 
-
-    else {
-        printf("Nota: Como 'A' e negativo, o sinal da inequacao inverteu.\n");
-        if (sinal == 1) {
-            printf("Solucao: X < %.2lf\n", resultado);
-        } else if (sinal == 2) {
+    if (sinal == 1) { // Inequação original era '>'
+        if (a > 0) {
             printf("Solucao: X > %.2lf\n", resultado);
         } else {
-            printf("Opcao de sinal invalida.\n");
+            printf("Nota: Como 'A' e negativo, o sinal inverteu.\n");
+            printf("Solucao: X < %.2lf\n", resultado);
         }
+    } else if (sinal == 2) { // Inequação original era '<'
+        if (a > 0) {
+            printf("Solucao: X < %.2lf\n", resultado);
+        } else {
+            printf("Nota: Como 'A' e negativo, o sinal inverteu.\n");
+            printf("Solucao: X > %.2lf\n", resultado);
+        }
+    } else {
+        printf("Opcao de sinal invalida.\n");
     }
 }
 
 // --- FUNÇÃO DO BHASKARA ---
 
-void ejecutarBhaskara() {
+void executarBhaskara() {
     double a, b, c;
     double delta, x1, x2, xv, yv;
 
     printf("\n--- FORMULA DE BHASKARA (E VERTICES) ---\n");
     printf("Digite o valor de A: ");
-    scanf("%lf", &a);
+    scanf(" %lf", &a);
     printf("Digite o valor de B: ");
-    scanf("%lf", &b);
+    scanf(" %lf", &b);
     printf("Digite o valor de C: ");
-    scanf("%lf", &c);
+    scanf(" %lf", &c);
 
     if (a == 0) {
         printf("O valor de A nao pode ser zero em uma equacao do 2o grau.\n");
@@ -93,6 +91,7 @@ void ejecutarBhaskara() {
     printf("Yv (Vertice Y): %.2lf\n", yv);
 }
 
+
 // --- MENU ---
 
 int main() {
@@ -109,14 +108,14 @@ int main() {
     printf("7 - Bhaskara\n");
     printf("8 - Inequacao do 1o Grau\n");
     printf("Escolha a operacao desejada: ");
-    scanf("%d", &opcao);
+    scanf(" %d", &opcao);
 
     switch(opcao) {
 
         case 1:
 
             printf("Digite dois numeros: ");
-            scanf("%lf %lf", &num1, &num2);
+            scanf(" %lf %lf", &num1, &num2);
             resultado = num1 + num2;
             printf("Resultado: %.2lf\n", resultado);
             break;
@@ -124,7 +123,7 @@ int main() {
         case 2:
 
             printf("Digite dois numeros: ");
-            scanf("%lf %lf", &num1, &num2);
+            scanf(" %lf %lf", &num1, &num2);
             resultado = num1 - num2;
             printf("Resultado: %.2lf\n", resultado);
             break;
@@ -132,7 +131,7 @@ int main() {
         case 3:
 
             printf("Digite dois numeros: ");
-            scanf("%lf %lf", &num1, &num2);
+            scanf(" %lf %lf", &num1, &num2);
             resultado = num1 * num2;
             printf("Resultado: %.2lf\n", resultado);
             break;
@@ -140,7 +139,7 @@ int main() {
         case 4:
 
             printf("Digite dois numeros: ");
-            scanf("%lf %lf", &num1, &num2);
+            scanf(" %lf %lf", &num1, &num2);
             if (num2 != 0) {
                 resultado = num1 / num2;
                 printf("Resultado: %.2lf\n", resultado);
@@ -152,7 +151,7 @@ int main() {
         case 5:
 
             printf("Digite um numero: ");
-            scanf("%lf", &num1);
+            scanf(" %lf", &num1);
             if (num1 >= 0) {
                 resultado = sqrt(num1);
                 printf("Resultado: %.2lf\n", resultado);
@@ -164,7 +163,7 @@ int main() {
         case 6:
 
             printf("Digite a base e o expoente (ex: 2 3 para 2^3): ");
-            scanf("%lf %lf", &num1, &num2);
+            scanf(" %lf %lf", &num1, &num2);
             resultado = pow(num1, num2);
             printf("Resultado: %.2lf\n", resultado);
             break;
