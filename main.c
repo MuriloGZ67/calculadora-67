@@ -56,7 +56,7 @@ int main() {
     printf("3 - Multiplicacao\n");
     printf("4 - Divisao\n");
     printf("5 - Raiz Quadrada\n");
-    printf("6 - Potenciacao\n"); // Caso 6 recuperado!
+    printf("6 - Potenciacao\n"); 
     printf("7 - Bhaskara\n");
     printf("Escolha a operacao desejada: ");
     scanf("%d", &opcao);
