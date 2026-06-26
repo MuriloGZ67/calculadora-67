@@ -28,14 +28,15 @@ void executarInequacao() {
 
     printf("\n--- CONJUNTO SOLUCAO ---\n");
 
-    if (sinal == 1) { // Inequação original era '>'
+    if (sinal == 1) {
         if (a > 0) {
             printf("Solucao: X > %.2lf\n", resultado);
         } else {
             printf("Nota: Como 'A' e negativo, o sinal inverteu.\n");
             printf("Solucao: X < %.2lf\n", resultado);
         }
-    } else if (sinal == 2) { // Inequação original era '<'
+
+    } else if (sinal == 2) {
         if (a > 0) {
             printf("Solucao: X < %.2lf\n", resultado);
         } else {
@@ -47,7 +48,7 @@ void executarInequacao() {
     }
 }
 
-// --- FUNÇÃO DO BHASKARA ---
+// --- FBHASKARA ---
 
 void executarBhaskara() {
     double a, b, c;
